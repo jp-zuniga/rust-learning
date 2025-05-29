@@ -39,5 +39,6 @@ fn first_word(s: &str) -> &str {
         }
     }
 
-    &s[..]
+    // return the whole string if no spaces were found:
+    s
 }

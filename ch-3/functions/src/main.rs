@@ -29,5 +29,6 @@ fn five() -> i32 {
     // return 5;
     5
 
-    // using return explicitly *seems* like better practice
+    // ? using return explicitly *seems* like better practice.
+    // - but apparently not, lol
 }

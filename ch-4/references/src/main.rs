@@ -79,9 +79,9 @@ fn main() {
 }
 
 
-fn calculate_length(s: &String) -> usize {
+fn calculate_length(s: &str) -> usize {
     // s, by virtue of being a reference, doesn't own the value it points to.
-    return s.len();
+    s.len()
     // when it goes out of scope, only *it* is dropped, not the string it points to.
 }
 

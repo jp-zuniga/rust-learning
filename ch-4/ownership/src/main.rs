@@ -136,12 +136,9 @@ fn makes_copy(some_int: i32) {
 
 
 fn gives_ownership() -> String {
-    // some_string is created
-    let some_string = String::from("yours!");
-
-    // and is sent off back to whoever called the function,
-    // out of this scope so it may live on in another
-    return some_string;
+    // a is created and sent off back to whoever called the function,
+    // out of this scope so it may live on in another.
+    String::from("yours!")
 }
 
 
@@ -150,5 +147,5 @@ fn takes_and_gives_back(some_string: String) -> String {
     // stuff is done with it
 
     // it's sent back to whence it came
-    return some_string;
+    some_string
 }
