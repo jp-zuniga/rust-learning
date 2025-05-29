@@ -1,7 +1,7 @@
 // Mutability!
 
-// Variables are immutable by default, and
-// must be declared with mut to be changed.
+// Variables are immutable by default,
+// and must be declared with mut to be changed.
 
 fn main() {
     // type *must* be specified beforehand for constants
@@ -17,7 +17,7 @@ fn main() {
 
     println!("x in outer scope: {x}");
 
-    // immutability and shadowing allows the reuse
+    // immutability and shadowing allows the reuse of
     // the same variable name to hold a different type:
     let spaces: &'static str = "   ";
     let spaces: usize = spaces.len();

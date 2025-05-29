@@ -15,6 +15,7 @@ fn main() {
     let condition = true;
 
     // since an if is an expression, its return value can be assigned
+
     // in this case, the return values of both arms must be the same type
     let n = if condition { 5 } else { 6 };
 

@@ -28,4 +28,6 @@ fn five() -> i32 {
     // equivalent to:
     // return 5;
     5
+
+    // using return explicitly *seems* like better practice
 }

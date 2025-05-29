@@ -9,12 +9,9 @@ use rand::Rng;
 fn main() {
     let secret_number: u32 = rand::thread_rng().gen_range(1..=100);
 
-    // println!();
     println!("Guess the number!");
-    // println!("(It's {secret_number}, but shhhhh!)");
 
     loop {
-        // println!();
         println!("Please input your guess: ");
 
         let mut guess: String = String::new();
@@ -28,7 +25,6 @@ fn main() {
             Err(_) => continue,
         };
 
-        // println!();
         println!("You guessed {guess}...");
 
         match guess.cmp(&secret_number) {
