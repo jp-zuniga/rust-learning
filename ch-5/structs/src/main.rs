@@ -24,6 +24,44 @@ struct Point(i32, i32, i32);
 // ? struct AlwaysEqual;
 
 
+struct Rectangle {
+    width: f64,
+    height: f64
+}
+
+// all associated functions and behaviors of the Rectangle struct go here:
+impl Rectangle {
+    // "Self"  = alias for the type of the impl block
+    // "&self" = alias for an immutable reference to the instance the method is being called on
+
+    fn new(width: f64, height: f64) -> Self {
+        // return a new Rectangle instance with the given parameters
+        Self {
+            width,
+            height
+        }
+    }
+
+    fn square(dimension: f64) -> Self {
+        // return a new Rectangle instance with the same width and height
+        Self {
+            width: dimension,
+            height: dimension
+        }
+    }
+
+    fn get_area(&self) -> f64 {
+        // calculate the area of the instance the method is called on
+        self.width * self.height
+    }
+
+    fn can_hold(&self, other: &Rectangle) -> bool {
+        // can this instance hold another Rectangle inside of itself?
+        self.width > other.width && self.height > other.height
+    }
+}
+
+
 fn main() {
 
     let user1 = User {
@@ -62,6 +100,16 @@ fn main() {
     let origin = Point(black.0, black.1, black.2);
 
     println!("Test Point: {}, {}, {}", origin.0, origin.1, origin.2);
+
+    // methods that don't require an existing instance are essentially namespaced to the struct
+    let rect = Rectangle::new(3.1, 4.8);
+    let square = Rectangle::square(4.0);
+
+    println!("Area of first rectangle: {}", rect.get_area());
+    println!(
+        "Can the rectangle fit inside the square? {}",
+        match square.can_hold(&rect) { true => "Yes!", false => "Nope." }
+    );
 }
 
 
